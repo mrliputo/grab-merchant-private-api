@@ -1,0 +1,1169 @@
+{
+    "itemClasses": [
+        {
+            "ItemClassID": "IDITEDP20230926050523010534",
+            "Name": "Non Halal",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": ""
+        },
+        {
+            "ItemClassID": "IDITEDP20230926050550015950",
+            "Name": "Mega Diskon",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+             "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20230926050523010534",
+                        "Name": "Non Halal",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20230926050550015950",
+                        "Name": "Mega Diskon",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20230117065213014179",
+                        "Name": "Bogasari",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20200610034750011166",
+                        "Name": "Produk 18+ \u0026 21+",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220624101542016503",
+                        "Name": "Hobi \u0026 Gaya Hidup",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629084603017236",
+                        "Name": "Buah \u0026 Sayuran",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629084534013268",
+                        "Name": "Susu \u0026 Olahan",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629084502016414",
+                        "Name": "Electronics.",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629084424012073",
+                        "Name": "Menu Sarapan \u0026 Roti",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629083803015272",
+                        "Name": "Lainnya",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629083635011784",
+                        "Name": "Bahan Pokok \u0026 Masak",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629090006013664",
+                        "Name": "Makanan Instan",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629083338019599",
+                        "Name": "Perlengkapan Rumah",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629083236010281",
+                        "Name": "Perawatan \u0026 Kecantikan",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629082832016723",
+                        "Name": "Daging \u0026 Makanan Beku",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20201110030913011352",
+                        "Name": "Promo Harian",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20200910103436017166",
+                        "Name": "Elektronik",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20240228111138012604",
+                        "Name": "Ready to Eat (RTE)",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629084125010672",
+                        "Name": "Ibu \u0026 Bayi",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629084347011754",
+                        "Name": "Minuman",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220629083554015180",
+                        "Name": "Makanan Ringan \u0026 Ice Cream",
+                        "Status": "Enabled",
+                        "ParentID": "",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20230117065213014179",
+            "Name": "Bogasari",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": ""
+        },
+        {
+            "ItemClassID": "IDITEDP20200610034750011166",
+            "Name": "Produk 18+ \u0026 21+",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20200707030833011282",
+                        "Name": "Beer \u0026 Cider",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220525091625011954",
+                        "Name": "Produk Dewasa (18+)",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701030327017155",
+                        "Name": "Soju \u0026 Sake",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701030709017000",
+                        "Name": "-",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701030850012319",
+                        "Name": "Electronic Cigarrettes",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701030941017755",
+                        "Name": "Liquours",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701031041014436",
+                        "Name": "Korek Api \u0026 Pemantik",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124104652011373",
+                        "Name": "Gin",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124104831016392",
+                        "Name": "Vodka",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124104928015374",
+                        "Name": "Whiskey",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124105003015187",
+                        "Name": "Wine \u0026 Champagne",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124105028016245",
+                        "Name": "Rum",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124105059019028",
+                        "Name": "Tequila",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20240219123534014324",
+                        "Name": "Local Product",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200610034750011166",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220624101542016503",
+            "Name": "Hobi \u0026 Gaya Hidup",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                {
+                    "ItemClassID": "IDITEDP20220624101850015344",
+                    "Name": "Hobby \u0026 Toys",
+                    "Status": "Enabled",
+                    "ParentID": "IDITEDP20220624101542016503",
+                    "ParentClassName": ""
+                },
+                {
+                    "ItemClassID": "IDITEDP20220624102034016932",
+                    "Name": "Set Hadiah \u0026  Acara ",
+                    "Status": "Enabled",
+                    "ParentID": "IDITEDP20220624101542016503",
+                    "ParentClassName": ""
+                },
+                {
+                    "ItemClassID": "IDITEDP20220628040253012472",
+                    "Name": "Taman \u0026 Tumbuhan",
+                    "Status": "Enabled",
+                    "ParentID": "IDITEDP20220624101542016503",
+                    "ParentClassName": ""
+                },
+                {
+                    "ItemClassID": "IDITEDP20220628040321018866",
+                    "Name": "Stationeries, Office \u0026 School",
+                    "Status": "Enabled",
+                    "ParentID": "IDITEDP20220624101542016503",
+                    "ParentClassName": ""
+                },
+                {
+                    "ItemClassID": "IDITEDP20220628040345016882",
+                    "Name": "Fashion Pria \u0026 Wanita",
+                    "Status": "Enabled",
+                    "ParentID": "IDITEDP20220624101542016503",
+                    "ParentClassName": ""
+                },
+                {
+                    "ItemClassID": "IDITEDP20220701075259015832",
+                    "Name": "Cat Food",
+                    "Status": "Enabled",
+                    "ParentID": "IDITEDP20220624101542016503",
+                    "ParentClassName": ""
+                },
+                {
+                    "ItemClassID": "IDITEDP20220701075355015961",
+                    "Name": "Dog Food",
+                    "Status": "Enabled",
+                    "ParentID": "IDITEDP20220624101542016503",
+                    "ParentClassName": ""
+                },
+                {
+                    "ItemClassID": "IDITEDP20221117105322019076",
+                    "Name": "Otomotif",
+                    "Status": "Enabled",
+                    "ParentID": "IDITEDP20220624101542016503",
+                    "ParentClassName": ""
+                }
+            ]
+
+        },
+        {
+            "ItemClassID": "IDITEDP20220629084603017236",
+            "Name": "Buah \u0026 Sayuran",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+                "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20220701091747019463",
+                        "Name": "Buah-buahan",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084603017236",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701091851019800",
+                        "Name": "Rempah-rempah",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084603017236",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092018013176",
+                        "Name": "Tahu \u0026 Tempe",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084603017236",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092135010576",
+                        "Name": "Sayuran Segar",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084603017236",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116094750019832",
+                        "Name": "Cut Fruits \u0026 Vegetables",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084603017236",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629084534013268",
+            "Name": "Susu \u0026 Olahan",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20220701085821012407",
+                        "Name": "Keju, Krim, dan Mentega",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084534013268",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085930014940",
+                        "Name": "Telur",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084534013268",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701090049019477",
+                        "Name": "Fresh Milk",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084534013268",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701090158016840",
+                        "Name": "Alternatif Susu",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084534013268",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701090257019878",
+                        "Name": "Susu Bubuk",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084534013268",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701090415011865",
+                        "Name": "Yogurt dan Puding",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084534013268",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124105206011607",
+                        "Name": "Cheese",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084534013268",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629084502016414",
+            "Name": "Electronics.",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": ""
+        },
+        {
+            "ItemClassID": "IDITEDP20220629084424012073",
+            "Name": "Menu Sarapan \u0026 Roti",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20220701085331016255",
+                        "Name": "Roti \u0026 Pastry",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084424012073",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085513018279",
+                        "Name": "Sereal, Granola, \u0026 Oat",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084424012073",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085628017532",
+                        "Name": "Selai \u0026 Olesan",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084424012073",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220718100219019105",
+                        "Name": "Honey",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084424012073",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629083803015272",
+            "Name": "Lainnya",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20221116101332019648",
+                        "Name": "Shopping Bags \u0026 Packaging ",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083803015272",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116101431010624",
+                        "Name": "Hampers \u0026 Bundling",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083803015272",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629083635011784",
+            "Name": "Bahan Pokok \u0026 Masak",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+             "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20220701090142018422",
+                        "Name": "Perlengkapan Baking",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083635011784",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701090349015620",
+                        "Name": "Susu Kental Manis",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083635011784",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701090553014632",
+                        "Name": "Tepung",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083635011784",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701091011014270",
+                        "Name": "Minyak \u0026 Cuka",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083635011784",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701091254019744",
+                        "Name": "Beras",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083635011784",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701091351019779",
+                        "Name": "Saos \u0026 Kecap",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083635011784",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701091508010209",
+                        "Name": "Bumbu Masakan",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083635011784",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701091611019834",
+                        "Name": "Gula \u0026 Garam",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083635011784",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20230516111303013926",
+                        "Name": "Grains \u0026 Seeds",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083635011784",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629090006013664",
+            "Name": "Makanan Instan",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20230213074700010880",
+                        "Name": "Makanan Siap Saji.",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629090006013664",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701093341012249",
+                        "Name": "Makanan Instant",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629090006013664",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116101132018223",
+                        "Name": "Instant Noodles.",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629090006013664",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629083338019599",
+            "Name": "Perlengkapan Rumah",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20220701075656011287",
+                        "Name": "Produk Kebersihan Rumah",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083338019599",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701082353019729",
+                        "Name": "Kebutuhan Rumah",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083338019599",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701082514017402",
+                        "Name": "Perlengkapan Laundry",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083338019599",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116100938014539",
+                        "Name": "Home Tools and Improvement",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083338019599",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629083236010281",
+            "Name": "Perawatan \u0026 Kecantikan",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20220701092125012893",
+                        "Name": "Perawatan Tubuh",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092157018805",
+                        "Name": "Perawatan wajah",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092226010300",
+                        "Name": "Alat P3K",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092410012356",
+                        "Name": "Perawatan Rambut",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092451011525",
+                        "Name": "Masker \u0026 Hand Sanitizer",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092521017633",
+                        "Name": "Obat Bebas",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092617015134",
+                        "Name": "Grooming Pria",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092813016034",
+                        "Name": "Perawatan Mulut",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092843018450",
+                        "Name": "Pembalut Kewanitaan",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701092910013714",
+                        "Name": "Vitamin dan Suplement Makan",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116100836019711",
+                        "Name": "Perawatan Mata \u0026 Telinga",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116101536012800",
+                        "Name": "Bath \u0026 Soap",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116101626013982",
+                        "Name": "Kosmetik \u0026 Aksesoris",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20230816145908018461",
+                        "Name": "Perfume",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20230816145950014931",
+                        "Name": "Facial Cotton and Tissue",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20230816150010012195",
+                        "Name": "Sun Care",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083236010281",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629082832016723",
+            "Name": "Daging \u0026 Makanan Beku",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20220701090715018191",
+                        "Name": "Makanan Beku Olahan",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701091001016589",
+                        "Name": "Pork",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701091528013032",
+                        "Name": "Makanan Laut",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124105249011822",
+                        "Name": "Boneless Chicken",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124105402019740",
+                        "Name": "Parting Chicken",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124105430011393",
+                        "Name": "Whole Chicken",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124110212019921",
+                        "Name": "Slice \u0026 Cut Meat",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124110357019014",
+                        "Name": "Mince Meat",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124110449014967",
+                        "Name": "Steak Meat",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124110524010517",
+                        "Name": "Ribs \u0026 Bone-in Meat",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124110602014580",
+                        "Name": "Liver \u0026 Lung",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124110708015895",
+                        "Name": "French Fries",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231124110741016756",
+                        "Name": "Other Frozen",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629082832016723",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20201110030913011352",
+            "Name": "Promo Harian",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20230727115724015638",
+                        "Name": "Payday with PEPITO",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20201110030913011352",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20230713104913016735",
+                        "Name": "Superhemat with Pepito",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20201110030913011352",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231011062805011136",
+                        "Name": "Free Item",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20201110030913011352",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20231019101032012168",
+                        "Name": "Item Paling Dicari",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20201110030913011352",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20200910103436017166",
+            "Name": "Elektronik",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+             "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20200910103459011202",
+                        "Name": "Computer \u0026 Accessories",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200910103436017166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20200910103539010383",
+                        "Name": "Lamps",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200910103436017166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20200910103554016788",
+                        "Name": "Other Electronics \u0026 Accessories",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200910103436017166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20210721073915012508",
+                        "Name": "Battery",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200910103436017166",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116094633018288",
+                        "Name": "Handphone \u0026 Accessories",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20200910103436017166",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20240228111138012604",
+            "Name": "Ready to Eat (RTE)",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+             "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20240909114523012735",
+                        "Name": "Noodle \u0026 Pasta",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20240228111138012604",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629084125010672",
+            "Name": "Ibu \u0026 Bayi",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20220701084139010514",
+                        "Name": "Susu \u0026 Makanan Bayi",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084125010672",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701084252017470",
+                        "Name": "Perawatan Tubuh Bayi",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084125010672",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701084359011762",
+                        "Name": "Popok \u0026 Tissue",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084125010672",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116094004017069",
+                        "Name": "Fashion Bayi \u0026 Anak",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084125010672",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116105510012838",
+                        "Name": "Perlengkapan Bayi",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084125010672",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629084347011754",
+            "Name": "Minuman",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20230213070339012880",
+                        "Name": "Minuman Siap Saji",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701074400011762",
+                        "Name": "0% Alcohol Drinks.",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701082824019058",
+                        "Name": "Minuman Cokelat",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701083703017647",
+                        "Name": "Minuman Kopi",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701084147011441",
+                        "Name": "Minuman Energi \u0026 Isotonik",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701084916011625",
+                        "Name": "Minuman Bersoda",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085053010116",
+                        "Name": "Teh",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085140011948",
+                        "Name": "Air Mineral",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221101034146017980",
+                        "Name": "Ice Cube",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221116094431016160",
+                        "Name": "Sachet, Beans \u0026 Powder Drinks",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221124075441013532",
+                        "Name": "Juices \u0026 Healthy Drinks.",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20221124075503011417",
+                        "Name": "Sirup",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629084347011754",
+                        "ParentClassName": ""
+                    }
+                ]
+        },
+        {
+            "ItemClassID": "IDITEDP20220629083554015180",
+            "Name": "Makanan Ringan \u0026 Ice Cream",
+            "Status": "Enabled",
+            "ParentID": "",
+            "ParentClassName": "",
+            "itemClasses": [
+                    {
+                        "ItemClassID": "IDITEDP20220701085150011522",
+                        "Name": "Biskuit, Kue, \u0026 Wafer",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083554015180",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085346014231",
+                        "Name": "Keripik \u0026 Kerupuk",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083554015180",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085648019022",
+                        "Name": "Coklat \u0026 Permen",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083554015180",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085757015076",
+                        "Name": "Es Krim",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083554015180",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085852012532",
+                        "Name": "Kacang \u0026 Snack Kering",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083554015180",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085927015195",
+                        "Name": "Snack Batangan",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083554015180",
+                        "ParentClassName": ""
+                    },
+                    {
+                        "ItemClassID": "IDITEDP20220701085959013246",
+                        "Name": "Traditional Snacks",
+                        "Status": "Enabled",
+                        "ParentID": "IDITEDP20220629083554015180",
+                        "ParentClassName": ""
+                    }
+                ]
+        }
+    ],
+    "more": false
+}
