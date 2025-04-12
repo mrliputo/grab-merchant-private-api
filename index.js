@@ -81,7 +81,8 @@ async function menu(session) {
     console.log("\nPilih fitur:");
     console.log("1. Get list product → simpan ke list-product.csv");
     console.log("2. Update product dari list-product.csv");
-    console.log("3. Add product dari list-upload-new.csv\n");
+    console.log("3. Add product dari list-upload-new.csv");
+    console.log("444. Delete product dari delete-product.csv\n");
 
     const choice = await prompt("Masukkan nomor pilihan: ");
 
@@ -94,6 +95,9 @@ async function menu(session) {
             break;
         case "3":
             await addProductsFromCSV(session);
+            break;
+        case "444":
+            await deleteProductsFromCSV(session);
             break;
         default:
             console.log("❌ Pilihan tidak valid.");
@@ -159,6 +163,7 @@ async function getListProduct(session) {
 
 async function updateProductsFromCSV(session) {
     const filePath = "list-product.csv";
+    const failPath = "list-product-gagal-update.csv";
     if (!fs.existsSync(filePath)) {
         console.log("❌ File list-product.csv tidak ditemukan.");
         return;
@@ -166,6 +171,7 @@ async function updateProductsFromCSV(session) {
 
     const content = fs.readFileSync(filePath);
     const products = parse(content, { columns: true });
+    const failedUpdates = [];
 
     for (const item of products) {
         try {
@@ -174,7 +180,7 @@ async function updateProductsFromCSV(session) {
                     itemID: item.itemID,
                     itemName: item.itemName,
                     availableStatus: parseInt(item.availableStatus),
-                    priceDisplay: "", // bisa diisi sesuai kebutuhan
+                    priceDisplay: "",
                     sortOrder: 1,
                     description: item.description,
                     imageURL: item.imageURL,
@@ -200,7 +206,7 @@ async function updateProductsFromCSV(session) {
                     soldByWeight: false,
                     webPURL: item.webPURL || "",
                     sellingTimeID: item.sellingTimeID,
-                    priceRange: "", // bisa diisi kalau kamu punya
+                    priceRange: "",
                     advancedPricing: {},
                     purchasability: {},
                     imageURLs: item.imageURL ? [item.imageURL] : [],
@@ -229,39 +235,43 @@ async function updateProductsFromCSV(session) {
                 categoryID: item.categoryID,
                 itemAttributeValues: null
             };
-            // console.log(payload)
-            // console.log( {
-            //     authorization: session.jwt,
-            //     merchantid: session.user_profile.grab_food_entity_id,
-            //     merchantgroupid: session.user_profile.links[0].link_entity_id,
-            //     "content-type": "application/json",
-            //     origin: "https://merchant.grab.com",
-            //     referer: "https://merchant.grab.com/",
-            //     requestsource: "troyPortal"
-            // })
-            await axios.post("https://api.grab.com/food/merchant/v2/upsert-item", payload, {
-                headers: {
-                    authorization: session.jwt,
-                    merchantid: session.user_profile.grab_food_entity_id,
-                    merchantgroupid: session.user_profile.links[0].link_entity_id,
-                    "content-type": "application/json",
-                    origin: "https://merchant.grab.com",
-                    referer: "https://merchant.grab.com/",
-                    requestsource: "troyPortal"
-                }
-            });
 
+            const headers = {
+                authorization: session.jwt,
+                merchantid: session.user_profile.grab_food_entity_id,
+                merchantgroupid: session.user_profile.links[0].link_entity_id,
+                "content-type": "application/json",
+                origin: "https://merchant.grab.com",
+                referer: "https://merchant.grab.com/",
+                requestsource: "troyPortal"
+            };
+
+            await axios.post("https://api.grab.com/food/merchant/v2/upsert-item", payload, { headers });
             console.log(`✅ Update: ${item.itemName}`);
+            let avail = parseInt(item.stock) < 1 ? 3 : parseInt(item.availableStatus)
+            await axios.put("https://api.grab.com/food/merchant/v1/items/available-status", {
+                itemIDs: [item.itemID],
+                availableStatus: avail
+            }, { headers });
+
+            console.log(`✅ Status diperbarui: ${item.itemName}`);
         } catch (err) {
-            console.log(err.response)
-            console.error(`❌ Gagal update ${item.itemName}:`, err.message);
+            const errorMsg = err.response?.data?.error?.message || err.message;
+            item.logError = errorMsg;
+            failedUpdates.push(item);
+            console.error(`❌ Gagal update ${item.itemName}:`, errorMsg);
         }
     }
+// simpan list error
+    if (failedUpdates.length) {
+        fs.writeFileSync(failPath, stringify(failedUpdates, { header: true }));
+        console.log(`⚠️  ${failedUpdates.length} gagal update disimpan ke ${failPath}`);
+    }
 }
-
 async function addProductsFromCSV(session) {
     const uploadPath = "list-upload-new.csv";
     const samplePath = "sample-list-upload-new.csv";
+    const failPath = "list-upload-new-gagal-add.csv";
 
     if (!fs.existsSync(uploadPath)) {
         console.log("⚠️  list-upload-new.csv tidak ditemukan.");
@@ -289,13 +299,14 @@ async function addProductsFromCSV(session) {
 
     const content = fs.readFileSync(uploadPath);
     const products = parse(content, { columns: true });
+    const failedAdds = [];
 
     for (const item of products) {
         try {
             const payload = {
                 item: {
                     itemName: item.itemName,
-                    priceInMin: parseInt(item.priceInMin),
+                    priceInMin: parseInt(item.priceInMin)*100,
                     itemCode: item.itemCode,
                     skuID: item.skuID,
                     itemClassID: item.itemClassID,
@@ -328,11 +339,64 @@ async function addProductsFromCSV(session) {
 
             console.log(`✅ Produk baru ditambahkan: ${item.itemName}`);
         } catch (err) {
-
-            console.error(`❌ Gagal tambah ${item.itemName}:`, err.message);
+            const errorMsg = err.response?.data?.message || err.message;
+            item.logError = errorMsg;
+            failedAdds.push(item);
+            console.error(`❌ Gagal tambah ${item.itemName}:`, errorMsg);
         }
     }
+
+    if (failedAdds.length) {
+        fs.writeFileSync(failPath, stringify(failedAdds, { header: true }));
+        console.log(`⚠️  ${failedAdds.length} gagal tambah disimpan ke ${failPath}`);
+    }
 }
+async function deleteProductsFromCSV(session) {
+    const deletePath = "delete-product.csv";
+    const failPath = "delete-product-gagal-delete.csv";
+
+    if (!fs.existsSync(deletePath)) {
+        console.log("❌ File delete-product.csv tidak ditemukan.");
+        return;
+    }
+
+    const content = fs.readFileSync(deletePath);
+    const products = parse(content, { columns: true });
+    const failed = [];
+
+    const headers = {
+        authorization: session.jwt,
+        merchantid: session.user_profile.grab_food_entity_id,
+        merchantgroupid: session.user_profile.links[0].link_entity_id,
+        "content-type": "application/json",
+        origin: "https://merchant.grab.com",
+        referer: "https://merchant.grab.com/",
+        requestsource: "troyPortal"
+    };
+
+    for (const item of products) {
+        const itemID = item.itemID || item.itemId || item.id;
+        if (!itemID) continue;
+
+        const url = `https://api.grab.com/food/merchant/v2/items/${itemID}`;
+        const payload = { itemID, menuGroupID: "" };
+
+        try {
+            await axios.delete(url, { headers, data: payload });
+            console.log(`✅ Berhasil hapus: ${itemID}`);
+        } catch (err) {
+            const msg = err.response?.data?.error?.message || err.message;
+            console.error(`❌ Gagal hapus ${itemID}: ${msg}`);
+            failed.push({ ...item, logError: msg });
+        }
+    }
+
+    if (failed.length) {
+        fs.writeFileSync(failPath, stringify(failed, { header: true }));
+        console.log(`📄 Log gagal disimpan di: ${failPath}`);
+    }
+}
+
 
 (async () => {
     let session = getSession();
