@@ -80,9 +80,10 @@ async function loginLoop() {
 async function menu(session) {
     console.log("\nPilih fitur:");
     console.log("1. Get list product → simpan ke list-product.csv");
-    console.log("2. Update product dari list-product.csv");
-    console.log("3. Add product dari list-upload-new.csv");
-    console.log("444. Delete product dari delete-product.csv\n");
+    console.log("2343. Update product dari list-product.csv");
+    console.log("3342. Add product dari list-upload-new.csv");
+    console.log("4543. Update Product dan Harga Dari POS update-dari-pos.csv");
+    console.log("999. Delete product dari delete-product.csv\n");
 
     const choice = await prompt("Masukkan nomor pilihan: ");
 
@@ -90,13 +91,17 @@ async function menu(session) {
         case "1":
             await getListProduct(session);
             break;
-        case "2":
+        case "2343":
             await updateProductsFromCSV(session);
             break;
-        case "3":
+        case "3342":
             await addProductsFromCSV(session);
             break;
-        case "444":
+        case "4543":
+            const choicePersen = await prompt("Baikan harga berapa persen ? (contoh 10 = 10% 11 = 11% ) : ");
+            await updatePriceFromPOS(session,choicePersen);
+            break;
+        case "999":
             await deleteProductsFromCSV(session);
             break;
         default:
@@ -107,26 +112,6 @@ async function menu(session) {
 
 async function getListProduct(session) {
     try {
-        // console.log({
-        //     authorization: session.jwt,
-        //     merchantid: session.user_profile.grab_food_entity_id,
-        //     merchantgroupid: session.user_profile.links[0].link_entity_id,
-        //     origin: "https://merchant.grab.com",
-        //     referer: "https://merchant.grab.com/",
-        //     requestsource: "troyPortal",
-        //     "User-Agent":
-        //         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
-        //     "accept": "application/json",
-        //     "accept-language": "id",
-        //     "priority": "u=1, i",
-        //     "sec-ch-ua": '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"',
-        //     "sec-ch-ua-mobile": "?0",
-        //     "sec-ch-ua-platform": '"Windows"',
-        //     "sec-fetch-dest": "empty",
-        //     "sec-fetch-mode": "cors",
-        //     "sec-fetch-site": "same-site",
-        //     "x-session-id": "50cbaa89-f174-7c68-7cff-cf752922f3b6", // <-- kamu bisa generate UUID baru tiap waktu
-        // })
         const res = await axios.get("https://api.grab.com/food/merchant/v2/menu", {
             headers: {
                 authorization: session.jwt
@@ -141,7 +126,8 @@ async function getListProduct(session) {
                 itemCode: item.itemCode,
                 description: item.description,
                 priceInMin: item.priceInMin,
-                stock: item.weight?.count || 0,
+                weightCount: item.weight?.count || 0,
+                currentStock: item.itemStock?.currentStock || "",
                 weight: item.weight?.value,
                 unit: item.weight?.unit,
                 imageURL: item.imageURL || '',
@@ -156,7 +142,7 @@ async function getListProduct(session) {
         fs.writeFileSync("list-product.csv", csv);
         console.log("✅ list-product.csv berhasil dibuat.");
     } catch (err) {
-        // console.log(err.response);
+        //console.log(err.response);
         console.error("❌ Gagal mengambil produk:", err.message);
     }
 }
@@ -187,7 +173,7 @@ async function updateProductsFromCSV(session) {
                     priceInMin: parseInt(item.priceInMin),
                     weight: {
                         unit: item.unit,
-                        count: parseInt(item.stock),
+                        count: parseInt(item.weightCount),
                         value: parseInt(item.weight)
                     },
                     itemCode: item.itemCode,
@@ -248,7 +234,7 @@ async function updateProductsFromCSV(session) {
 
             await axios.post("https://api.grab.com/food/merchant/v2/upsert-item", payload, { headers });
             console.log(`✅ Update: ${item.itemName}`);
-            let avail = parseInt(item.stock) < 1 ? 3 : parseInt(item.availableStatus)
+            let avail = parseInt(item.availableStatus)
             await axios.put("https://api.grab.com/food/merchant/v1/items/available-status", {
                 itemIDs: [item.itemID],
                 availableStatus: avail
@@ -303,6 +289,9 @@ async function addProductsFromCSV(session) {
 
     for (const item of products) {
         try {
+
+            let itemStock = item.stock?.replace(/,/g, "");
+            console.log("item stock",itemStock)
             const payload = {
                 item: {
                     itemName: item.itemName,
@@ -313,8 +302,8 @@ async function addProductsFromCSV(session) {
                     sellingTimeID: item.sellingTimeID,
                     categoryID: item.categoryID,
                     weight: {
-                        unit: item.unit,
-                        count: item.stock && parseInt(item.stock) > 0 ? parseInt(item.stock) : null,
+                        unit: ["ml", "l", "g", "k", "per pack"].includes(item.unit) ? item.unit : "per pack",
+                        count: 1,
                         value: parseInt(item.weight)
                     },
                     description: item.description,
@@ -325,7 +314,7 @@ async function addProductsFromCSV(session) {
                 itemAttributeValues: []
             };
 
-            await axios.post("https://api.grab.com/food/merchant/v2/upsert-item", payload, {
+            let uploadproduct = await axios.post("https://api.grab.com/food/merchant/v2/upsert-item", payload, {
                 headers: {
                     authorization: session.jwt,
                     merchantid: session.user_profile.grab_food_entity_id,
@@ -336,9 +325,51 @@ async function addProductsFromCSV(session) {
                     requestsource: "troyPortal"
                 }
             });
-
+            const itemID = uploadproduct?.data?.itemID || null;
             console.log(`✅ Produk baru ditambahkan: ${item.itemName}`);
+            if (itemID) {
+                if ( itemStock > 0) {
+                    console.log(`✅ add Stock product : ${item.itemName}`);
+
+                    const urlStock = `https://api.grab.com/food/merchant/v1/items/${itemID}/upsert-item-stock`;
+                    const payloadStock = {
+                        enableIms: true,
+                        currentStock: parseInt(itemStock),
+                        enableRestock: false,
+                        restockSetting: null
+                    };
+                    await axios.post(urlStock, payloadStock, {   headers: {
+                            authorization: session.jwt,
+                            merchantid: session.user_profile.grab_food_entity_id,
+                            merchantgroupid: session.user_profile.links[0].link_entity_id,
+                            "content-type": "application/json",
+                            origin: "https://merchant.grab.com",
+                            referer: "https://merchant.grab.com/",
+                            requestsource: "troyPortal"
+                        } });
+                    console.log(`✅ Stock updated for: ${itemID}`);
+                } else {
+                    console.log(` ❌ stock 0 : ${item.itemName}`);
+                    await axios.put("https://api.grab.com/food/merchant/v1/items/available-status", {
+                        itemIDs: [itemID],
+                        availableStatus: 3
+                    }, { headers: {
+                            authorization: session.jwt,
+                            merchantid: session.user_profile.grab_food_entity_id,
+                            merchantgroupid: session.user_profile.links[0].link_entity_id,
+                            "content-type": "application/json",
+                            origin: "https://merchant.grab.com",
+                            referer: "https://merchant.grab.com/",
+                            requestsource: "troyPortal"
+                        } });
+                }
+
+            } else {
+                console.log(` ❌ Gagal tambah Stock : ${item.itemName}`);
+            }
+
         } catch (err) {
+            console.log(err)
             const errorMsg = err.response?.data?.message || err.message;
             item.logError = errorMsg;
             failedAdds.push(item);
@@ -382,7 +413,8 @@ async function deleteProductsFromCSV(session) {
         const payload = { itemID, menuGroupID: "" };
 
         try {
-            await axios.delete(url, { headers, data: payload });
+             let res = await axios.delete(url, { headers, data: payload });
+            // console.log(res);
             console.log(`✅ Berhasil hapus: ${itemID}`);
         } catch (err) {
             const msg = err.response?.data?.error?.message || err.message;
@@ -397,6 +429,169 @@ async function deleteProductsFromCSV(session) {
     }
 }
 
+async function updatePriceFromPOS(session,choicePersen) {
+    const listPath = "list-product.csv";
+    const posPath = "update-dari-pos.csv";
+    const failPath = "update-dari-pos-error.csv";
+
+    if (!fs.existsSync(listPath) || !fs.existsSync(posPath)) {
+        console.log("❌ File list-product.csv atau update-dari-pos.csv tidak ditemukan.");
+        return;
+    }
+
+    const listProducts = parse(fs.readFileSync(listPath), { columns: true });
+    const posUpdates = parse(fs.readFileSync(posPath), { columns: true });
+    const skuMap = Object.fromEntries(listProducts.map(p => [p.skuID, p]));
+    const notFound = [];
+
+    const headers = {
+        authorization: session.jwt,
+        merchantid: session.user_profile.grab_food_entity_id,
+        merchantgroupid: session.user_profile.links[0].link_entity_id,
+        "content-type": "application/json",
+        origin: "https://merchant.grab.com",
+        referer: "https://merchant.grab.com/",
+        requestsource: "troyPortal"
+    };
+
+    for (const posItem of posUpdates) {
+        console.log(`----------------------------------------------------------------------`);
+        const sku = posItem["Item Code"];
+        const priceStr = posItem["Normal Price"]?.replace(/[^0-9.,]/g, "").replace(/,/g, "").trim();
+        const item_name = posItem["Item Name"];
+        const quantity = posItem["Quantity"]?.replace(/,/g, "");
+        const uom = posItem["UoM"];
+
+
+        const priceNormal = Math.round(parseFloat(priceStr) * 100);
+        const persen = parseInt(choicePersen)/100;
+        const addprice = parseInt(priceNormal) * persen;
+        const price = priceNormal+addprice;
+        console.log(`add persen :  ${choicePersen}%, decimal : ${persen}, priceNormal : ${priceNormal}, addprice : ${addprice}, price : ${price}`);
+        // console.log(`sku: ${sku}, item_name: ${item_name}, priceStr: ${priceStr}, price: ${price},Uom : ${uom}, quantity : ${quantity}`);
+        const product = skuMap[sku];
+        if (!product) {
+            console.log(`❌ Gagal menemukan produk untuk SKU: ${sku}, ${item_name}`);
+            notFound.push({ ...posItem, sku: sku, logError: "sku tidak ditemukan" });
+            continue;
+        }
+
+        const payload = {
+            item: {
+                itemID: product.itemID,
+                itemName: item_name,
+                priceInMin: parseInt(price),
+                availableStatus: parseInt(product.availableStatus),
+                priceDisplay: "",
+                sortOrder: 1,
+                description: product.description,
+                imageURL: product.imageURL,
+                weight: {
+                    unit: ["ml", "l", "g", "k", "per pack"].includes(uom) ? uom : "per pack",
+                    count: 1,
+                    value: parseInt(product.weight)
+                },
+                itemCode: product.itemCode,
+                itemClassID: product.itemClassID,
+                specialItemType: "",
+                itemClassName: product.itemClassName,
+                skuID: product.skuID,
+                brandName: "",
+                itemStock: {
+                    enableIms: true,
+                    currentStock: parseInt(product.stock),
+                    enableRestock: true,
+                    restockSetting: null
+                },
+                linkedModifierGroupIDs: null,
+                soldByWeight: false,
+                webPURL: product.webPURL || "",
+                sellingTimeID: product.sellingTimeID,
+                priceRange: "",
+                advancedPricing: {},
+                purchasability: {},
+                imageURLs: product.imageURL ? [product.imageURL] : [],
+                webPURLs: product.webPURL ? [product.webPURL] : [],
+                serviceTypePriceRange: {},
+                availableAt: "0001-01-01T00:00:00Z",
+                stockPrediction: null,
+                parentItemClassID: product.parentItemClassID || "",
+                parentItemClassName: product.parentItemClassName || "",
+                nameTranslation: null,
+                descriptionTranslation: null,
+                supportedAttributeClusterIDs: [],
+                prediction: { isTobacco: false },
+                menuScanError: null,
+                aiGeneratedFields: null,
+                suggestFields: null,
+                soldQuantity: 0,
+                itemCampaignInfo: null,
+                menuScanTaskMeta: null,
+                oosNonReplacementReason: "",
+                eligibleSellingStatus: "ELIGIBLE",
+                categoryID: product.categoryID
+            },
+            categoryID: product.categoryID,
+            itemAttributeValues: null
+        };
+        // console.log(payload)
+        try {
+            await axios.post("https://api.grab.com/food/merchant/v2/upsert-item", payload, { headers });
+            console.log(`✅ Product diperbarui: ${product.itemName} (${sku})`);
+            console.log(`Start diperbarui Stock : ${product.itemName} (${sku})`);
+
+                if ( parseInt(quantity) > 0) {
+                    console.log(`✅ add Stock product : ${product.itemName} (${sku})`);
+
+                    const urlStock = `https://api.grab.com/food/merchant/v1/items/${product.itemID}/upsert-item-stock`;
+                    const payloadStock = {
+                        enableIms: true,
+                        currentStock: parseInt(quantity),
+                        enableRestock: false,
+                        restockSetting: null
+                    };
+                    await axios.post(urlStock, payloadStock, {   headers: {
+                            authorization: session.jwt,
+                            merchantid: session.user_profile.grab_food_entity_id,
+                            merchantgroupid: session.user_profile.links[0].link_entity_id,
+                            "content-type": "application/json",
+                            origin: "https://merchant.grab.com",
+                            referer: "https://merchant.grab.com/",
+                            requestsource: "troyPortal"
+                        } });
+                    console.log(`✅ Stock updated for: ${product.itemID}`);
+                } else {
+                    console.log(` ❌ stock 0 : ${product.itemName}`);
+                    await axios.put("https://api.grab.com/food/merchant/v1/items/available-status", {
+                        itemIDs: [product.itemID],
+                        availableStatus: 3
+                    }, { headers: {
+                            authorization: session.jwt,
+                            merchantid: session.user_profile.grab_food_entity_id,
+                            merchantgroupid: session.user_profile.links[0].link_entity_id,
+                            "content-type": "application/json",
+                            origin: "https://merchant.grab.com",
+                            referer: "https://merchant.grab.com/",
+                            requestsource: "troyPortal"
+                        } });
+                    console.log(`✅ Set Product Available ${product.itemName}`);
+                }
+
+            console.log(`✅ ----------------------------------------------------------------------`);
+
+        } catch (err) {
+            const msg = err.response?.data?.error?.message || err.message;
+            notFound.push({ ...posItem, sku: sku, logError: msg });
+            console.error(`❌ Gagal update harga ${sku}:`, msg);
+            console.log(`❌ ----------------------------------------------------------------------`);
+        }
+    }
+
+    if (notFound.length > 0) {
+        fs.writeFileSync(failPath, stringify(notFound, { header: true }));
+        console.log(`📄 File error ditulis ke ${failPath}`);
+    }
+}
 
 (async () => {
     let session = getSession();
